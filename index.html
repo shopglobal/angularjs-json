@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Posts AngularJS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="container" ng-app="myApp" ng-controller="postController">
+    <div class="row">
+
+    	<div class="col-md-6">
+    		<ul class="nav nav-pills nav-stacked">
+
+         	<li ng-repeat="content in contents">
+            	<a href ng-click="select(content)">{{content.title}}</a>
+         	</li>
+
+       	</ul>
+    	</div>
+
+      <div class="col-md-6" ng-show="selectedItem">
+    		<div class="jumbotron">
+          <div id="content">
+            <div>
+              <p>User ID: {{selectedItem.userId}}</p>
+              <p>Post ID: {{selectedItem.id}}</p>
+              <p>Body: {{selectedItem.body}}</p>
+            </div>
+          </div>
+    	</div>
+    </div>
+
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js'></script>
+  <script src="js/posts.js"></script>
+</body>
+</html> 
